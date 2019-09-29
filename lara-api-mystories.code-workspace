@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.fontSize": 11,
+		"editor.fontFamily": "Fira Code",
+		"terminal.integrated.fontSize": 11
+	}
+}
