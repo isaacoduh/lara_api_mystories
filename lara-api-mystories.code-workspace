@@ -5,8 +5,9 @@
 		}
 	],
 	"settings": {
-		"editor.fontSize": 11,
-		"editor.fontFamily": "Fira Code",
-		"terminal.integrated.fontSize": 11
+		"editor.fontSize": 12,
+		"editor.fontFamily": "Inconsolata",
+		"terminal.integrated.fontSize": 11,
+		"terminal.integrated.fontFamily": "Fira Code"
 	}
 }
