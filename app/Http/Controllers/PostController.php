@@ -14,30 +14,30 @@ class PostController extends Controller
     }
 
     // Show single post
-    public function show($id)
+    public function show(Post $post)
     {
-        return Post::find($id);
+        return $post;
     }
 
     // Create a single post
     public function store(Request $request)
     {
-        return Post::create($request->all());
+        $post = Post::create($request->all());
+
+        return response()->json($post, 201);
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request, Post $post)
     {
-        $post = Post::findOrfail($id);
         $post->update($request->all());
-        return $post;
+        return response()->json($post, 200);
     }
 
-    public function delete(Request $request, $id)
+    public function delete(Post $post)
     {
-        $post = Post::findOrfail($id);
         $post->delete();
 
-        return 204;
+        return response()->json(null, 204);
     }
 
 
