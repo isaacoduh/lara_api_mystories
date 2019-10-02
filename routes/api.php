@@ -13,8 +13,22 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// Route::post('register', 'Auth\RegisterController@register');
+// Route::post('login', 'Auth\LoginController@login');
+
+Route::post('register', 'API\UserController@register');
+Route::post('login', 'API\UserController@login');
+
+Route::middleware('auth:api')->group(function(){
+    Route::resource('books', 'API\BookController');
+});
+
+Route::get('/', function(){
+    return 'Welcome to the Larave API Demo';
 });
 
 Route::get('posts', 'PostController@index');
